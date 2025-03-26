@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func main() {
 	// Print statement in Go!
@@ -17,6 +21,7 @@ func main() {
 	fmt.Println(name, age, weight, height, isDecided)
 
 	// Reassignment of Variables in Go!
+
 	var myName string = "James"
 	myName = "Rahul"
 	fmt.Println(myName)
@@ -25,20 +30,29 @@ func main() {
 	ex : const age int = 30 (age cannot have any other values `const myAge int = "30"`)
 	For this go have other kind of variable declaration.
 	*/ 
-
 	var myAge = 30
 	fmt.Printf("Type of myAge is %T\n", myAge)
 	var otherAge = "30"
 	fmt.Printf("Type of myAge is %T\n", otherAge)
 
 	// Other kind of variable assignment supported by Go!
-
 	newAge := "30"
+	fmt.Printf("Type of myAge is %T\n", newAge)
 
-	fmt.Printf("Type of myAge is %T", newAge)
-	
+	// Input by user in Go!
+	fmt.Print("What is your name ")
+	var userName string
+	// fmt.Scan(&userName)
+	/* The fmt's Scan function takes input only upto to where it finds the first whitespace ()
+	that is if the user inputs his name as John Doe the output will be Hey John from GoLang by Google.
+	*/
+	// fmt.Printf("Hey, %s from GoLang by Google", userName)
 
-	  
-	
+	// Other way of input from user 
+
+	reader := bufio.NewReader(os.Stdin)
+	userName, _ = reader.ReadString('\n')
+	fmt.Println("Hey, from GoLang by Google", userName)
+
 
 }
